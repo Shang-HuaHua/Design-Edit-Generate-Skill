@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rokid Design Edit"
+  short_description: "高保真增量编辑 Rokid 产品设计稿"
+  default_prompt: "Use $rokid-design-edit to enter RokidDesign mode and incrementally edit an existing Rokid product design."
