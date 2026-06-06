@@ -109,6 +109,28 @@ Only save when the user explicitly asks to save. When saving, use the path named
 
 If the image generation tool creates a default internal file, leave it in place unless the user explicitly asks to delete it.
 
+### Default Portrait Canvas
+
+For portrait mobile UI images, use the iPhone 16 Pro canvas size and aspect ratio by default:
+
+- Pixel size: `1206 × 2622`
+- Aspect ratio: `201:437`
+- Orientation: portrait
+
+Apply this default to generated, redrawn, and locally composited portrait images unless the user explicitly requests another size, aspect ratio, device, or orientation.
+
+When editing an existing portrait image with a different aspect ratio, adapt the layout to the iPhone 16 Pro canvas without stretching UI elements. Preserve relative spacing, card proportions, and visual hierarchy; use layout reflow or background extension instead of geometric distortion.
+
+If the content exceeds one iPhone 16 Pro screen:
+
+- Keep the canvas width fixed at `1206px`.
+- Extend the canvas height as needed so all content appears on one continuous long image.
+- Do not shrink, crop, overlap, or omit content merely to fit `2622px`.
+- Preserve the page's established vertical spacing and module proportions.
+- Add a subtle full-width screen-boundary divider at every `2622px` viewport boundary so the user can distinguish each iPhone 16 Pro screen.
+- Keep boundary dividers visually restrained and outside important text, icons, buttons, and cards.
+- Do not split a module or card across a boundary when reasonable; adjust nearby spacing so the divider falls between modules.
+
 ### Preserve By Default
 
 If the user says `删除扫码骑车`, delete only `扫码骑车`. Do not change related scene layouts, module heights, card sizes, button positions, text sizes, spacing, or proportions.
